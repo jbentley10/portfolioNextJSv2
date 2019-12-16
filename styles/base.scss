@@ -1,0 +1,137 @@
+:root {
+  background-color: theme('colors.purple.24');
+}
+
+*::selection {
+	background-color: theme('colors.orange.f0');
+	color: theme('colors.white');
+}
+
+html {
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  color: theme('colors.orange.f0');
+  font-family: theme('fontFamily.pragmatica-extended');
+  font-size: 14px;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  min-height: 100vh;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+
+a {
+  transition: color 400ms;
+}
+
+button {
+	background-color: transparent;
+	border: 0;
+	color: inherit;
+  font-family: theme('fontFamily.pragmatica-extended');
+  font-size: 14px;
+  font-weight: 900;
+  font-style: italic;
+  outline: 0;
+  text-transform: uppercase;
+  transition: color 400ms, background-color 400ms;
+  &:focus {
+    outline: 0;
+  }
+}
+
+input {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: theme('colors.white');
+  font-family: theme('fontFamily.pragmatica-extended');
+  font-size: 14px;
+  font-weight: 900;
+  font-style: italic;
+  outline: 0;
+  text-transform: uppercase;
+
+  &::-webkit-input-placeholder {
+    color: theme('colors.white');
+    opacity: 1;
+    transition: opacity 400ms;
+  }
+
+  &::-moz-placeholder {
+  color: theme('colors.white');
+    opacity: 1;
+    transition: opacity 400ms;
+  }
+
+  &:-ms-input-placeholder {
+    color: theme('colors.white');
+    opacity: 1;
+    transition: opacity 400ms;
+  }
+
+  &:-moz-placeholder {
+    color: theme('colors.white');
+    opacity: 1;
+    transition: opacity 400ms;
+  }
+
+  &:focus {
+    &::-webkit-input-placeholder {
+      opacity: 0.5;
+    }
+
+    &::-moz-placeholder {
+      opacity: 0.5;
+    }
+
+    &:-ms-input-placeholder {
+      opacity: 0.5;
+    }
+
+    &:-moz-placeholder {
+      opacity: 0.5;
+    }
+  }
+}
+
+textarea {
+  background-color: transparent;
+  border: 0;
+  color: theme('colors.white');
+  font-family: theme('fontFamily.pragmatica-extended');
+  font-size: 14px;
+  font-weight: 900;
+  font-style: italic;
+  outline: 0;
+  text-transform: uppercase;
+}
+
+figure {
+	margin: 0;
+}
+
+img {
+	height: auto;
+}
+
+svg {
+	width: 100%;
+
+	&:not([fill]) {
+	    fill: currentColor;
+	}
+}
+
+iframe,
+object,
+embed,
+video,
+img {
+	max-width: 100%;
+}

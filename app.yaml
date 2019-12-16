@@ -1,0 +1,50 @@
+runtime: nodejs10
+
+instance_class: F4
+automatic_scaling:
+  target_cpu_utilization: 0.6
+  max_pending_latency: 30ms
+  max_concurrent_requests: 25
+  min_instances: 6
+  min_idle_instances: 2
+
+service: default
+handlers:
+- url: /(.*\.(gif|png|jpg|svg|mp3|mp4))$
+  static_files: public/\1
+  upload: public/.*\.(gif|png|jpg|svg|mp3|mp4)$
+# All URLs beginning with /fonts are treated as paths to
+# static files in the fonts/ directory.
+- url: /fonts
+  static_dir: public/fonts
+# All URLs beginning with /public are treated as paths to
+# static files in the public/ directory.
+- url: /public
+  static_dir: public
+- url: /.*
+  script: auto
+  secure: always
+
+# Server-side Environment Variables
+# env_variables:
+# Where am I env vars
+#   WHEREAMI_GCP_CHECK: 1
+#   WHEREAMI_GCP_STAGE_KEY: '-staging'
+#   STAGING_URL: 'mysite-staging.appspot.com'
+#   PRODUCTION_URL: 'mysite.com'
+# 
+# Headless-CMS Config (Comment out unused ones.)
+#   HEADLESS_STAGING_CMS_API_URL: 'https://mysite.wpengine.com'
+#   HEADLESS_STAGING_CMS_API_URL: 'https://mysite.prismic.io'
+#   HEADLESS_CMS_API_URL: 'https://api.mysite.com'
+#   CACHE_ACTIVATED: true
+# 
+# Firebase-related env vars
+#   FIREBASE_API_KEY: 'XXXXX_xxxXXXX'
+#   FIREBASE_AUTH_DOMAIN: 'mysite.firebaseapp.com'
+#   FIREBASE_DATABASE_URL: 'https://mysite.firebaseio.com'
+#   FIREBASE_PROJECT_ID: 'mysite'
+#   FIREBASE_STORAGE_BUCKET: 'mysite.appspot.com'
+#   FIREBASE_MESSAGING_SENDER_ID: '000000000'
+#   FIREBASE_APP_ID: '1:000000000:web:00000000000'
+#   FIREBASE_APP_NAME: 'My Site'

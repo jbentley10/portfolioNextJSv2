@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title": "Home",
+    "slug": "home",
+    "url": "/"
+  },
+  {
+    "id": 1,
+    "title": "Layerframe",
+    "slug": "agency",
+    "url": "https://www.layerframe.com"
+  },
+  {
+    "id": 2,
+    "title": "Docs",
+    "slug": "docs",
+    "url": "https://zeit.co/now"
+  },
+  {
+    "id": 3,
+    "title": "About",
+    "slug": "about",
+    "url": "/about"
+  }
+]

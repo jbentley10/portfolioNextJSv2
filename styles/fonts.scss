@@ -1,0 +1,28 @@
+// Font includes
+
+@font-face {
+  font-family: "Pano Trial";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/PanoTrial-Light.woff2") format("woff2"),
+      url("/fonts/PanoTrial-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pano Trial";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/PanoTrial-Regular.woff2") format("woff2"),
+      url("/fonts/PanoTrial-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pano Trial";
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/PanoTrial-Bold.woff2") format("woff2"),
+      url("/fonts/PanoTrial-Bold.woff") format("woff");
+}

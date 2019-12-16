@@ -1,0 +1,5 @@
+# This file should be pointed to via CloudBuild
+steps:
+- name: "gcr.io/cloud-builders/gcloud"
+  args: ["app", "deploy", "app.staging.yaml"]
+timeout: "1600s"

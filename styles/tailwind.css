@@ -1,0 +1,297 @@
+/* General Tailwind includes */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global container class */
+
+.container {
+  max-width: 1800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding:  0 30px;
+  @media (min-width: theme('screens.sm')) {
+    padding: 0 60px;
+  }
+  @media (min-width: theme('screens.md')) {
+    padding: 0 70px;
+  }
+  @media (min-width: theme('screens.lg')) {
+    padding: 0 80px;
+  }
+  @media (min-width: theme('screens.xl')) {
+    padding: 0 90px;
+  }
+  @media (min-width: theme('screens.xxl')) {
+    padding: 0 100px;
+  }
+
+  &--no-padding-mobile {
+    padding: 0;
+    @media (min-width: theme('screens.md')) {
+      padding: 0 70px;
+    }
+    @media (min-width: theme('screens.lg')) {
+      padding: 0 80px;
+    }
+    @media (min-width: theme('screens.xl')) {
+      padding: 0 90px;
+    }
+    @media (min-width: theme('screens.xxl')) {
+      padding: 0 100px;
+    }
+  }
+}
+
+
+/* Global text editor class */
+
+.text-editor {
+  color: theme('colors.purple.e5');
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  * + h1,
+  * + h2,
+  * + h3,
+  * + h4,
+  * + h5,
+  * + h6 {
+    margin-top: 40px;
+
+    @media (min-width: theme('screens.lg')) {
+      margin-top: 50px;
+    }
+  }
+
+  p, li {
+    font-family: theme('fontFamily.acumin-pro');
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    margin-top: 20px;
+
+    @media (min-width: theme('screens.lg')) {
+      font-size: 19px;
+      margin-top: 25px;
+    }
+
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
+
+  ul {
+    margin-top: 30px;
+    padding-left: 20px;
+
+    @media (min-width: theme('screens.lg')) {
+      margin-top: 35px;
+      padding-left: 25px;
+    }
+  }
+
+  li {
+    list-style: disc outside none;
+  }
+
+  a {
+    color: theme('colors.orange.f0');
+    text-decoration: underline;
+
+    &:hover {
+      color: theme('colors.white');
+    }
+
+    &:active {
+      color: theme('colors.orange.f0');
+    }
+  }
+}
+
+
+/**
+ * Extending Tailwind with custom utilities
+ * Includes: Aspect Ratio, Blur, Gradient BG, Image BG, Text Stroke
+ */
+
+@responsive { /* Creates responsive classes for each custom utlity */
+
+  /* Aspect Ratio */
+  .aspect-ratio-1x1 {
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+
+    &::before {
+      content: "";
+      float: left;
+      height: 0;
+      margin-left: -1px;
+      padding-top: 100%;
+      width: -1px;
+    }
+  }
+
+  /* To Reset Aspect Ratio */
+  .aspect-ratio-auto {
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  /* Blur */
+  .blur-2 {
+    filter: blur(2px);
+  }
+  .blur-4 {
+    filter: blur(4px);
+  }
+  .blur-5 {
+    filter: blur(5px);
+  }
+  .blur-6 {
+    filter: blur(6px);
+  }
+  .blur-7 {
+    filter: blur(7px);
+  }
+  .blur-8 {
+    filter: blur(8px);
+  }
+
+  /* Gradient BG */
+  .bg-gradient-orange-purple {
+    background: linear-gradient(to right, theme('colors.orange.f0') 0%, theme('colors.purple.50') 100%);
+  }
+  .bg-gradient-purple-orange-purple {
+    background: linear-gradient(to right,
+      theme('colors.purple.92') 0%,
+      theme('colors.orange.ed') 10%,
+      theme('colors.purple.58') 48%,
+      theme('colors.purple.92') 68%);
+  }
+  .bg-gradient-purple-orange {
+    background: linear-gradient(to right,
+      theme('colors.purple.6d') 0%,
+      theme('colors.purple.7c') 33%,
+      theme('colors.orange.dc') 66%,
+      theme('colors.orange.f0') 100%);
+  }
+
+  /* Image BG */
+  /* .bg-dotted-01 {
+    background-image: url('/bgs/bg-dotted_01-mobile.jpg');
+    background-size: cover;
+    background-position: center center;
+
+    @media (min-width: theme('screens.md')) {
+      background-image: url('/bgs/bg-dotted_01-desktop.jpg');
+    }
+  } */
+
+  /* Text Stroke */
+  .text-stroke-color-purple-50 {
+    -webkit-text-stroke-color: theme('colors.purple.50');
+    text-stroke-color: theme('colors.purple.50');
+  }
+  .text-stroke-color-purple-6d {
+    -webkit-text-stroke-color: theme('colors.purple.6d');
+    text-stroke-color: theme('colors.purple.6d');
+  }
+  .text-stroke-color-purple-a7 {
+    -webkit-text-stroke-color: theme('colors.purple.a7');
+    text-stroke-color: theme('colors.purple.a7');
+  }
+  .text-stroke-color-purple-b6 {
+    -webkit-text-stroke-color: theme('colors.purple.b6');
+    text-stroke-color: theme('colors.purple.b6');
+  }
+  .text-stroke-color-purple-bf {
+    -webkit-text-stroke-color: theme('colors.purple.bf');
+    text-stroke-color: theme('colors.purple.bf');
+  }
+  .text-stroke-color-orange-f0 {
+    -webkit-text-stroke-color: theme('colors.orange.f0');
+    text-stroke-color: theme('colors.orange.f0');
+  }
+  .text-stroke-color-orange-ff {
+    -webkit-text-stroke-color: theme('colors.orange.ff');
+    text-stroke-color: theme('colors.orange.ff');
+  }
+  .text-stroke-color-white {
+    -webkit-text-stroke-color: theme('colors.white');
+    text-stroke-color: theme('colors.white');
+  }
+
+  .text-stroke-width-1 {
+    -webkit-text-stroke-width: 1px;
+    text-stroke-width: 1px;
+  }
+  .text-stroke-width-1-5 {
+    -webkit-text-stroke-width: 1.5px;
+    text-stroke-width: 1,5px;
+  }
+  .text-stroke-width-2 {
+    -webkit-text-stroke-width: 2px;
+    text-stroke-width: 2px;
+  }
+  .text-stroke-width-2-5 {
+    -webkit-text-stroke-width: 2.5px;
+    text-stroke-width: 2.5px;
+  }
+  .text-stroke-width-3 {
+    -webkit-text-stroke-width: 3px;
+    text-stroke-width: 3px;
+  }
+  .text-stroke-width-4 {
+    -webkit-text-stroke-width: 4px;
+    text-stroke-width: 4px;
+  }
+  .text-stroke-width-6 {
+    -webkit-text-stroke-width: 6px;
+    text-stroke-width: 6px;
+  }
+  .text-stroke-width-8 {
+    -webkit-text-stroke-width: 8px;
+    text-stroke-width: 8px;
+  }
+
+  @variants hover, active { /* Creates hover and active pseudo classes for each custom utlity */
+
+  }
+}
